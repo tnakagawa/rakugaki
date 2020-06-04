@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample - QR code</title>
+    <script src="./lib/qrcode.js"></script>
+    <script src="./qr.js"></script>
+    <style>
+        * {
+            font-size: 12pt;
+            font-family: monospace;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: bottom;
+            align-items: center;
+            align-content: center;
+            border: black 1px solid;
+        }
+
+        td.txt {
+            vertical-align: middle;
+        }
+
+        td.size {
+            vertical-align: middle;
+            border: none;
+        }
+
+        th {
+            border: black 1px solid;
+            text-align: center;
+        }
+
+        input {
+            width: 3em;
+            font-size: 20pt;
+            text-align: center;
+        }
+
+        button {
+            font-size: 18pt;
+        }
+
+        div {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        div.txt {
+            font-size: 9pt;
+            width: 200px;
+            word-break: break-all;
+            margin-bottom: 5px;
+        }
+
+        div.size {
+            font-size: 18pt;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class='size'>
+                <div class='size'>DataSize:</div>
+            </td>
+            <td class='size'><input id="bytelength" type="number" value="32" min="1"></td>
+            <td class='size'>
+                <div class='size'>Bytes</div>
+            </td>
+            <td class='size'><button id='reload'>RELOAD</button></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td></td>
+            <th id='hh'>HEX</th>
+            <th id='h64'>Base64URL (no pad)</th>
+            <th id='h32'>Base32 (no pad)</th>
+        </tr>
+        <tr>
+            <th>TEXT</th>
+            <td class='txt'>
+                <div class='txt' id='thex'></div>
+            </td>
+            <td class='txt'>
+                <div class='txt' id='t64'></div>
+            </td>
+            <td class='txt'>
+                <div class='txt' id='t32'></div>
+            </td>
+        </tr>
+        <tr>
+            <th>LEN</th>
+            <td class='txt'>
+                <div class='txt' id='lhex'></div>
+            </td>
+            <td class='txt'>
+                <div class='txt' id='l64'></div>
+            </td>
+            <td class='txt'>
+                <div class='txt' id='l32'></div>
+            </td>
+        </tr>
+        <tr>
+            <th>L</th>
+            <td>
+                <canvas id="c1h"></canvas>
+                <div class='txt' id='t1h'></div>
+            </td>
+            <td>
+                </div><canvas id="c164"></canvas>
+                <div class='txt' id='t164'>
+            </td>
+            <td>
+                <canvas id="c132"></canvas>
+                <div class='txt' id='t132'></div>
+            </td>
+        </tr>
+        <tr>
+            <th>M</th>
+            <td>
+                <canvas id="c0h"></canvas>
+                <div class='txt' id='t0h'></div>
+            </td>
+            <td>
+                <canvas id="c064"></canvas>
+                <div class='txt' id='t064'></div>
+            </td>
+            <td>
+                <canvas id="c032"></canvas>
+                <div class='txt' id='t032'></div>
+            </td>
+        </tr>
+        <tr>
+            <th>Q</th>
+            <td>
+                <canvas id="c3h"></canvas>
+                <div class='txt' id='t3h'></div>
+            </td>
+            <td>
+                <canvas id="c364"></canvas>
+                <div class='txt' id='t364'></div>
+            </td>
+            <td>
+                <canvas id="c332"></canvas>
+                <div class='txt' id='t332'></div>
+            </td>
+        </tr>
+        <tr>
+            <th>H</th>
+            <td>
+                <canvas id="c2h"></canvas>
+                <div class='txt' id='t2h'></div>
+            </td>
+            <td>
+                <canvas id="c264"></canvas>
+                <div class='txt' id='t264'></div>
+            </td>
+            <td>
+                <canvas id="c232"></canvas>
+                <div class='txt' id='t232'></div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
