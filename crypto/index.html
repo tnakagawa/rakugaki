@@ -4,13 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="otp.js"></script>
-    <script src="crypto.js"></script>
+    <title>TOPT</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="../qr/lib/qrcode.js"></script>
+    <script src="./otp.js"></script>
+    <script src="./crypto.js"></script>
 </head>
 
 <body>
-
+    <br>
+    <h1>Key Uri</h1>
+    <br>
+    <table>
+        <tr>
+            <td class="key">Issuer:</td>
+            <td class="val"><input id="issuer" type="text" value="Example"></td>
+        </tr>
+        <tr>
+            <td class="key">Account:</td>
+            <td class="val"><input id="account" type="text" value="alice@example.com"></td>
+        </tr>
+        <tr>
+            <td class="key">Secret:</td>
+            <td class="val"><input id="secret" type="text"><button id="genkey">Generate</button></td>
+        </tr>
+        <tr style="display: none">
+            <td class="key">Algorithm:</td>
+            <td class="val">
+                <select id="algorithm">
+                    <option value="" selected>SHA1</option>
+                    <option value="SHA256">SHA256</option>
+                    <option value="SHA512">SHA512</option>
+                </select>
+            </td>
+        </tr>
+        <tr style="display: none">
+            <td class="key">Digits:</td>
+            <td class="val">
+                <select id="digits">
+                    <option value="" selected>6</option>
+                    <option value="8">8</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div id="uri"></div>
+    <br>
+    <div id="qr_wrapper">
+        <canvas id="qr"></canvas>
+    </div>
+    <br>
+    <div class="center">
+        <span id="otp"></span>
+        <br>
+        <progress id="timebar" max="30" value="30"></progress>
+        <br>
+        <span id="time"></span>
+        <br>
+    </div>
 </body>
 
 </html>

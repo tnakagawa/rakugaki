@@ -1,0 +1,70 @@
+* {
+    font-family: monospace;
+    font-size: 12pt;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 20pt;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+td {
+    height: 1.5em;
+}
+
+td.key {
+    text-align: right;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#uri {
+    text-align: center;
+}
+
+#qr_wrapper {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    width: 17em;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+div.center {
+    text-align: center;
+}
+
+#otp {
+    text-align: center;
+    font-size: 32pt;
+}
+
+#genkey {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+#time {
+    font-size: 14pt;
+}
